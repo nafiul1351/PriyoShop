@@ -8,11 +8,11 @@
                 <div class="ht-left">
                     <div class="mail-service">
                         <i class=" fa fa-envelope"></i>
-                        priyoshop007@gmail.com
+                        <a href="mailto:nafiul1351@gmail.com" class="ahead">nafiul1351@gmail.com</a>
                     </div>
                     <div class="phone-service">
                         <i class=" fa fa-phone"></i>
-                        +880 1953806556
+                        <a href="tel:+8801992775545" class="ahead">+8801992775545</a>
                     </div>
                 </div>
                 <div class="ht-right">

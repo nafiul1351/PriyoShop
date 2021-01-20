@@ -8,8 +8,8 @@
                         </div>
                         <ul>
                             <li>Mirpur, Dhaka, Bangladesh</li>
-                            <li>Phone: +880 1953806556</li>
-                            <li>Email: priyoshop007@gmail.com</li>
+                            <li>Phone: <a href="tel:+8801992775545" class="afoot">+8801992775545</a></li>
+                            <li>Email: <a href="mailto:nafiul1351@gmail.com" class="afoot">nafiul1351@gmail.com</a></li>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -57,13 +57,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class=" text-center" style="color:#fff;">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | {{ config('app.name', 'Laravel') }}
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | {{ config('app.name', 'Laravel') }}
+                            <p>This site is designed and developed by <a href="https://www.mdnafiulislam.com/">Md. Nafiul Islam</a></p>
                         </div>
-                        <div class="payment-pic">
-                            <img src="img/payment-method.png" alt="">
-                        </div>
+                        
                     </div>
                 </div>
             </div>

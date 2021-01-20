@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="map-inner">
                     <iframe
-                        src="https://maps.google.com/maps?width=100%25&amp;height=610&amp;hl=en&amp;q=Mirpur,%20Dhaka,%20Bangladesh+(Priyoshop)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.647863734534!2d89.78114131435001!3d23.831117791606356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe17953189326d%3A0x4adf33029e168b4a!2sPost%20Ofiice%20Shivalaya!5e0!3m2!1sen!2sbd!4v1611157938911!5m2!1sen!2sbd"
                         height="610" style="border:0" allowfullscreen="">
                     </iframe>
                     <div class="icon">
@@ -58,7 +58,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Address:</span>
-                                <p>Mirpur, Dhaka, Bangladesh</p>
+                                <p>Manikganj, Dhaka, Bangladesh</p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -67,7 +67,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Phone:</span>
-                                <p>+880 1953806556</p>
+                                <p><a href="tel:+8801992775545" class="ahead">+8801992775545</a></p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -76,7 +76,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Email:</span>
-                                <p>priyoshop007@gmail.com</p>
+                                <p><a href="mailto:nafiul1351@gmail.com" class="ahead">nafiul1351@gmail.com</a></p>
                             </div>
                         </div>
                     </div>

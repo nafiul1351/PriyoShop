@@ -21,6 +21,16 @@
 <link rel="stylesheet" href="{{asset('css/jquery-ui.min.css')}}" type="text/css">
 <link rel="stylesheet" href="{{asset('css/slicknav.min.css')}}" type="text/css">
 <link rel="stylesheet" href="{{asset('css/style.css')}}" type="text/css">
+<style>
+    a.ahead:link {
+        color: black;
+    }
+    a.ahead:hover {color: blue;}
+    a.afoot:link {color: #A4B2B2;}
+    a.afoot:hover{
+        color: blue;
+    }
+</style>
     @yield('style')
 </head>
 <body>
