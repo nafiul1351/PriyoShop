@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2021 at 03:08 PM
+-- Generation Time: Feb 06, 2021 at 07:38 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -150,10 +150,13 @@ INSERT INTO `orders` (`id`, `user_id`, `total`, `discount`, `trx_id`, `transacti
 (64, 8, 1200, 0, 'order-1601663812', NULL, 1200, 0, NULL, 'Order Processed:Full', '2020-10-02 12:36:52', '2020-10-02 12:39:49', 'BDT'),
 (65, 8, 3000, 0, 'order-1601663879', NULL, 3000, 0, NULL, 'Order Processed:Full', '2020-10-02 12:37:59', '2020-10-02 12:39:47', 'BDT'),
 (66, 8, 1200, 0, 'order-1607087529', NULL, 1200, 0, NULL, 'Pending', '2020-12-04 07:12:09', '2020-12-04 07:12:09', 'BDT'),
-(67, 8, 3900, 0, 'order-1609263742', NULL, 3900, 0, NULL, 'Processing', '2020-12-29 11:42:22', '2020-12-29 11:42:22', 'BDT'),
-(68, 8, 3900, 0, 'order-1609492742', NULL, 3900, 0, NULL, 'Processing', '2021-01-01 03:19:02', '2021-01-01 03:19:02', 'BDT'),
-(69, 8, 1200, 0, 'order-1609524858', NULL, 1200, 0, NULL, 'Processing', '2021-01-01 12:14:18', '2021-01-01 12:14:18', 'BDT'),
-(70, 8, 3000, 0, 'order-1609529072', NULL, 3000, 0, NULL, 'Pending', '2021-01-01 13:24:32', '2021-01-01 13:24:32', 'BDT');
+(67, 8, 3900, 0, 'order-1609263742', NULL, 3900, 0, NULL, 'Payment Canceled', '2020-12-29 11:42:22', '2021-01-23 08:44:20', 'BDT'),
+(68, 8, 3900, 0, 'order-1609492742', NULL, 3900, 0, NULL, 'Payment Canceled', '2021-01-01 03:19:02', '2021-01-23 08:44:18', 'BDT'),
+(69, 8, 1200, 0, 'order-1609524858', NULL, 1200, 0, NULL, 'Payment Canceled', '2021-01-01 12:14:18', '2021-01-23 08:44:15', 'BDT'),
+(70, 8, 3000, 0, 'order-1609529072', NULL, 3000, 0, NULL, 'Pending', '2021-01-01 13:24:32', '2021-01-01 13:24:32', 'BDT'),
+(71, 8, 2500, 0, 'order-1611412683', NULL, 2500, 0, NULL, 'Pending', '2021-01-23 08:38:03', '2021-01-23 08:38:03', 'BDT'),
+(72, 8, 1200, 0, 'order-1611413883', NULL, 1200, 0, NULL, 'Payment Canceled', '2021-01-23 08:58:03', '2021-01-23 08:58:15', 'BDT'),
+(73, 8, 5000, 0, 'order-1611413934', NULL, 5000, 0, NULL, 'Processing', '2021-01-23 08:58:54', '2021-01-23 08:58:54', 'BDT');
 
 -- --------------------------------------------------------
 
@@ -187,7 +190,10 @@ INSERT INTO `order_details` (`id`, `product_id`, `order_id`, `color`, `size`, `q
 (51, 27, 68, 'Green', 'Medium', 1, 'Order Placed', 6, '2021-01-01 03:19:02', '2021-01-01 03:19:02'),
 (52, 28, 68, 'Black', 'Medium', 1, 'Order Placed', 6, '2021-01-01 03:19:02', '2021-01-01 03:19:02'),
 (53, 26, 69, 'Black', 'Medium', 1, 'Order Placed', 6, '2021-01-01 12:14:18', '2021-01-01 12:14:18'),
-(54, 32, 70, 'Black', 'Medium', 1, 'Order Placed', 6, '2021-01-01 13:24:32', '2021-01-01 13:24:32');
+(54, 32, 70, 'Black', 'Medium', 1, 'Order Placed', 6, '2021-01-01 13:24:32', '2021-01-01 13:24:32'),
+(55, 28, 71, 'Black', 'Medium', 1, 'Order Placed', 6, '2021-01-23 08:38:03', '2021-01-23 08:38:03'),
+(56, 26, 72, 'Red', 'Medium', 1, 'Order Placed', 6, '2021-01-23 08:58:03', '2021-01-23 08:58:03'),
+(57, 28, 73, 'Black', 'Medium', 2, 'Order Placed', 6, '2021-01-23 08:58:54', '2021-01-23 08:58:54');
 
 -- --------------------------------------------------------
 
@@ -372,7 +378,10 @@ INSERT INTO `shippings` (`id`, `order_id`, `s_name`, `s_phone`, `s_address_line_
 (61, 67, 'User 1', '01992775545', 'sssss', 'sssssss', 'Order Placed', '2020-12-29 11:42:22', '2020-12-29 11:42:22', 'BDT'),
 (62, 68, 'User 1', '01992775545', 'sssss', 'sssssss', 'Order Placed', '2021-01-01 03:19:02', '2021-01-01 03:19:02', 'BDT'),
 (63, 69, 'User 1', '01992775545', 'sssss', 'sssssss', 'Order Placed', '2021-01-01 12:14:18', '2021-01-01 12:14:18', 'BDT'),
-(64, 70, 'User 1', '01992775545', 'sssss', 'sssssss', 'Order Placed', '2021-01-01 13:24:32', '2021-01-01 13:24:32', 'BDT');
+(64, 70, 'User 1', '01992775545', 'sssss', 'sssssss', 'Order Placed', '2021-01-01 13:24:32', '2021-01-01 13:24:32', 'BDT'),
+(65, 71, 'User 1', '01900000000', 'demo address', NULL, 'Order Placed', '2021-01-23 08:38:03', '2021-01-23 08:38:03', 'BDT'),
+(66, 72, 'User 1', '01900000000', 'demo address', NULL, 'Order Placed', '2021-01-23 08:58:03', '2021-01-23 08:58:03', 'BDT'),
+(67, 73, 'User 1', '01900000000', 'demo address', NULL, 'Order Placed', '2021-01-23 08:58:54', '2021-01-23 08:58:54', 'BDT');
 
 -- --------------------------------------------------------
 
@@ -438,8 +447,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `gender`, `dob`, `type`, `approved`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (4, 'Naiful Islam', 'nafiul1351@gmail.com', '01992775545', 'male', '1995-10-09', 'admin', 1, '2020-03-10 18:00:00', '$2y$10$CzbM8XJhtEW9G3JhX24b1OswAMUqNXFnkK2dcpLHa.IigL9pxEPoi', 'yhPS1MN3YWhioCznwwHdcQ07pjWsCnRbAHsOkEmqzqW6M1xsGnGN2a4Avgi9', '2020-03-11 07:19:15', '2020-03-11 07:19:15'),
-(6, 'Seller 1', 'sellerone@gmail.com', '01700000000', 'male', '1995-10-09', 'seller', 1, '2020-03-07 18:00:00', '$2y$10$CzbM8XJhtEW9G3JhX24b1OswAMUqNXFnkK2dcpLHa.IigL9pxEPoi', 'Du4gCy6slDIadEuWkeNBNTpy13gqGQ8STcUHznSldbWwNo4i4JXOTCKUF1qk', '2020-03-11 07:42:10', '2020-03-11 07:42:49'),
-(8, 'User 1', 'userone@gmail.com', '01900000000', 'male', '1995-10-09', 'user', 1, '2020-10-02 12:34:55', '$2y$10$CzbM8XJhtEW9G3JhX24b1OswAMUqNXFnkK2dcpLHa.IigL9pxEPoi', 'KfhNxAYEs1gLlwI8vPd0RRsYo5q7GlLql5JCdn6t3GHJoNkJ73HYKfKZVfnQ', '2020-10-02 12:34:04', '2020-10-02 12:34:55');
+(6, 'Seller 1', 'sellerone@gmail.com', '01700000000', 'male', '1995-10-09', 'seller', 1, '2020-03-07 18:00:00', '$2y$10$CzbM8XJhtEW9G3JhX24b1OswAMUqNXFnkK2dcpLHa.IigL9pxEPoi', 'USyiAqCpNEy93UZle1f8xs526sBtzzFSKyhSAwPXY9Ei78TeM7XngCTUka1r', '2020-03-11 07:42:10', '2020-03-11 07:42:49'),
+(8, 'User 1', 'userone@gmail.com', '01900000000', 'male', '1995-10-09', 'user', 1, '2020-10-02 12:34:55', '$2y$10$CzbM8XJhtEW9G3JhX24b1OswAMUqNXFnkK2dcpLHa.IigL9pxEPoi', 'GHVwpGjytFAOxgvaqYjid3G36utWK7hxd1Kl0NFOOcfR3aflbnbXj52mWcdB', '2020-10-02 12:34:04', '2020-10-02 12:34:55');
 
 --
 -- Indexes for dumped tables
@@ -591,13 +600,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -633,7 +642,7 @@ ALTER TABLE `seller_details`
 -- AUTO_INCREMENT for table `shippings`
 --
 ALTER TABLE `shippings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `shops`
