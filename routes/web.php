@@ -11,26 +11,28 @@
 |
 */
 
-Route::get('/','HomeController@homepage');
-Route::get('/product-details/{product}','ProductController@productDetails')->name('product.details');
-Route::get('/shop/all-product','ProductController@shop')->name('shop');
-Route::get('/category/all-product/{category}','ProductController@categorywiseProduct')->name('category.product');
-Route::get('/brand/all-product/{brand}','BrandController@brandwiseProduct')->name('brand.product');
-Route::get('/search/search-product','HomeController@searchResult')->name('search.result');
-Route::post('add-to-cart/{product}','ProductController@addCart')->name('add.cart');
-Route::delete('remove-cart/{product}','ProductController@destroyCart')->name('cart.remove');
-Route::get('show-cart','ProductController@showCart')->name('show.cart');
-Route::patch('update-cart/{product}','ProductController@updateCart')->name('cart.update');
-Route::get('/search/product/range','ProductController@productSearchRange')->name('product.search.range');
-Route::get('/contact','ContactController@contactpage')->name('contact');
-Route::get('/aboutus','AboutusController@aboutuspage')->name('aboutus');
-Auth::routes([
-    'verify' => true
-]);
+Route::middleware('lscache:max-age=600;public')->group(function () {
+    Route::get('/','HomeController@homepage');
+    Route::get('/product-details/{product}','ProductController@productDetails')->name('product.details');
+    Route::get('/shop/all-product','ProductController@shop')->name('shop');
+    Route::get('/category/all-product/{category}','ProductController@categorywiseProduct')->name('category.product');
+    Route::get('/brand/all-product/{brand}','BrandController@brandwiseProduct')->name('brand.product');
+    Route::get('/search/search-product','HomeController@searchResult')->name('search.result');
+    Route::post('add-to-cart/{product}','ProductController@addCart')->name('add.cart');
+    Route::delete('remove-cart/{product}','ProductController@destroyCart')->name('cart.remove');
+    Route::get('show-cart','ProductController@showCart')->name('show.cart');
+    Route::patch('update-cart/{product}','ProductController@updateCart')->name('cart.update');
+    Route::get('/search/product/range','ProductController@productSearchRange')->name('product.search.range');
+    Route::get('/contact','ContactController@contactpage')->name('contact');
+    Route::get('/aboutus','AboutusController@aboutuspage')->name('aboutus');
+    Auth::routes([
+        'verify' => true
+    ]);
 
-Route::get('seller-register', 'Auth\RegisterController@showSellerRegistrationForm')->name('register.seller');
+    Route::get('seller-register', 'Auth\RegisterController@showSellerRegistrationForm')->name('register.seller');
+});
 
-Route::middleware(['auth','verified'])->group(function () {
+Route::middleware(['auth','verified','lscache:max-age=600;public'])->group(function () {
 
     Route::get('/not-approved/seller', 'HomeController@notApprovedSeller')->name('notApprovedSeller');
 
@@ -112,8 +114,5 @@ Route::middleware(['auth','verified'])->group(function () {
         Route::get('user-cancel-payment/{order}','OrderController@usercancelPaymentStatus')->name('user.cancel.order');
     });
 
-        Route::get('view/order/details/{order}','OrderController@showDetails')->name('order.details');
-
-
+    Route::get('view/order/details/{order}','OrderController@showDetails')->name('order.details');
 });
-

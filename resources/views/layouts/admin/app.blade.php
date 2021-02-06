@@ -65,7 +65,7 @@
         <footer class="site-footer">
             <div class="text-center">
                 <p>
-                    &copy; Copyrights <strong>{{ config('app.name', 'Laravel') }}</strong>. All Rights Reserved
+                    &copy; <script>document.write(new Date().getFullYear());</script> <strong>{{ config('app.name', 'Laravel') }}</strong>. All Rights Reserved
                 </p>
                 <a href="blank.html#" class="go-top">
                     <i class="fa fa-angle-up"></i>

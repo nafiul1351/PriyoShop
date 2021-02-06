@@ -88,8 +88,6 @@ abstract class AbstractSslCommerz implements SslCommerzInterface
     {
         $sslcz = json_decode($response, true);
 
-        // dd($sslcz);
-
         if ($type != 'checkout') {
             return $sslcz;
         } else {

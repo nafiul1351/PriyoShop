@@ -28,7 +28,7 @@
     <section class="contact-section3 spad">
         <div class="container">
             <div class="row">
-                <p style="padding-top: 10px; padding-left: 15px;">PriyoShop is an online shopping mall for buying and selling clothes. It's payment methods are totally secure. Both Buyers and sellers can be benefited by using this website.</p>
+                <p style="padding-top: 10px; padding-left: 15px;">PriyoShop is an online shopping mall for buying and selling products. It's payment methods are totally secure. Both Buyers and sellers can be benefited by using this website.</p>
                 <div class="col-lg-5">
                     <div class="contact-title">
                         <h4>Owner</h4>
