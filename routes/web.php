@@ -11,33 +11,31 @@
 |
 */
 
-Route::middleware('lscache:max-age=600;public')->group(function () {
-    Route::get('/','HomeController@homepage');
-    Route::get('/product-details/{product}','ProductController@productDetails')->name('product.details');
-    Route::get('/shop/all-product','ProductController@shop')->name('shop');
-    Route::get('/category/all-product/{category}','ProductController@categorywiseProduct')->name('category.product');
-    Route::get('/brand/all-product/{brand}','BrandController@brandwiseProduct')->name('brand.product');
-    Route::get('/search/search-product','HomeController@searchResult')->name('search.result');
-    Route::post('add-to-cart/{product}','ProductController@addCart')->name('add.cart');
-    Route::delete('remove-cart/{product}','ProductController@destroyCart')->name('cart.remove');
-    Route::get('show-cart','ProductController@showCart')->name('show.cart');
-    Route::patch('update-cart/{product}','ProductController@updateCart')->name('cart.update');
-    Route::get('/search/product/range','ProductController@productSearchRange')->name('product.search.range');
-    Route::get('/contact','ContactController@contactpage')->name('contact');
-    Route::get('/aboutus','AboutusController@aboutuspage')->name('aboutus');
-    Auth::routes([
-        'verify' => true
-    ]);
+Route::get('/','HomeController@homepage')->middleware('lscache:max-age=300;public');
+Route::get('/product-details/{product}','ProductController@productDetails')->name('product.details');
+Route::get('/shop/all-product','ProductController@shop')->name('shop');
+Route::get('/category/all-product/{category}','ProductController@categorywiseProduct')->name('category.product');
+Route::get('/brand/all-product/{brand}','BrandController@brandwiseProduct')->name('brand.product');
+Route::get('/search/search-product','HomeController@searchResult')->name('search.result');
+Route::post('add-to-cart/{product}','ProductController@addCart')->name('add.cart');
+Route::delete('remove-cart/{product}','ProductController@destroyCart')->name('cart.remove');
+Route::get('show-cart','ProductController@showCart')->name('show.cart');
+Route::patch('update-cart/{product}','ProductController@updateCart')->name('cart.update');
+Route::get('/search/product/range','ProductController@productSearchRange')->name('product.search.range');
+Route::get('/contact','ContactController@contactpage')->name('contact');
+Route::get('/aboutus','AboutusController@aboutuspage')->name('aboutus');
+Auth::routes([
+    'verify' => true
+]);
 
-    Route::get('seller-register', 'Auth\RegisterController@showSellerRegistrationForm')->name('register.seller');
-});
+Route::get('seller-register', 'Auth\RegisterController@showSellerRegistrationForm')->name('register.seller');
 
-Route::middleware(['auth','verified','lscache:max-age=600;public'])->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
 
-    Route::get('/not-approved/seller', 'HomeController@notApprovedSeller')->name('notApprovedSeller');
+    Route::get('/not-approved/seller', 'HomeController@notApprovedSeller')->name('notApprovedSeller')->middleware('lscache:max-age=300;public');
 
     Route::middleware(['ApprovedSeller'])->group(function () {
-        Route::get('/seller/dashboard', 'HomeController@sellerIndex')->name('seller.home');
+        Route::get('/seller/dashboard', 'HomeController@sellerIndex')->name('seller.home')->middleware('lscache:max-age=300;public');
         Route::get('/seller/request-new-shop', 'SellerController@shopRequest')->name('shop.request');
         Route::post('/seller/shop-management/add-shop', 'ShopController@addShop')->name('shop.add');
         Route::get('/seller/shop-management/edit-shop/{shop}', 'ShopController@editShop')->name('shop.edit');
@@ -72,7 +70,7 @@ Route::middleware(['auth','verified','lscache:max-age=600;public'])->group(funct
     });
 
     Route::middleware(['Admin'])->group(function () {
-        Route::get('/admin/dashboard', 'HomeController@index')->name('admin.home');
+        Route::get('/admin/dashboard', 'HomeController@index')->name('admin.home')->middleware('lscache:max-age=300;public');
         Route::get('/admin/seller-management/requests','SellerController@viewRequests')->name('seller.requests');
         Route::get('/admin/seller-management/approved','SellerController@approvedSellers')->name('seller.approvedSellers');
 
@@ -95,7 +93,7 @@ Route::middleware(['auth','verified','lscache:max-age=600;public'])->group(funct
     });
 
     Route::middleware(['User'])->group(function () {
-        Route::get('/home', 'HomeController@userIndex')->name('home');
+        Route::get('/home', 'HomeController@userIndex')->name('home')->middleware('lscache:max-age=300;public');
         Route::get('/user/checkout/{lat}/{lon}', 'OrderController@userCheckout')->name('user.checkout');
         Route::post('/user/order/place', 'OrderController@store')->name('user.order.place');
         Route::post('/order/rating/{orderDetail}', 'OrderController@orderRating')->name('user.product.rating');
