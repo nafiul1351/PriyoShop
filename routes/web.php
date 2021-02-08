@@ -14,7 +14,7 @@
 Route::get('/','HomeController@homepage')->middleware('lscache:max-age=30;public');
 Route::get('/product-details/{product}','ProductController@productDetails')->name('product.details');
 Route::get('/shop/all-product','ProductController@shop')->name('shop');
-Route::get('/category/all-product/{category}','ProductController@categorywiseProduct');
+Route::get('/category/all-product/{category}','ProductController@categorywiseProduct')->name('category.product');
 Route::get('/brand/all-product/{brand}','BrandController@brandwiseProduct')->name('brand.product');
 Route::get('/search/search-product','HomeController@searchResult')->name('search.result');
 Route::post('add-to-cart/{product}','ProductController@addCart')->name('add.cart');
