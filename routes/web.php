@@ -12,18 +12,18 @@
 */
 
 Route::get('/','HomeController@homepage')->middleware('lscache:max-age=30;public');
-Route::get('/product-details/{product}','ProductController@productDetails')->name('product.details')->middleware('lscache:max-age=30;public');
-Route::get('/shop/all-product','ProductController@shop')->name('shop')->middleware('lscache:max-age=30;public');
-Route::get('/category/all-product/{category}','ProductController@categorywiseProduct')->name('category.product')->middleware('lscache:max-age=30;public');
-Route::get('/brand/all-product/{brand}','BrandController@brandwiseProduct')->name('brand.product')->middleware('lscache:max-age=30;public');
-Route::get('/search/search-product','HomeController@searchResult')->name('search.result')->middleware('lscache:max-age=30;public');
+Route::get('/product-details/{product}','ProductController@productDetails')->name('product.details');
+Route::get('/shop/all-product','ProductController@shop')->name('shop');
+Route::get('/category/all-product/{category}','ProductController@categorywiseProduct');
+Route::get('/brand/all-product/{brand}','BrandController@brandwiseProduct')->name('brand.product');
+Route::get('/search/search-product','HomeController@searchResult')->name('search.result');
 Route::post('add-to-cart/{product}','ProductController@addCart')->name('add.cart');
 Route::delete('remove-cart/{product}','ProductController@destroyCart')->name('cart.remove');
 Route::get('show-cart','ProductController@showCart')->name('show.cart');
 Route::patch('update-cart/{product}','ProductController@updateCart')->name('cart.update');
 Route::get('/search/product/range','ProductController@productSearchRange')->name('product.search.range');
-Route::get('/contact','ContactController@contactpage')->name('contact')->middleware('lscache:max-age=30;public');
-Route::get('/aboutus','AboutusController@aboutuspage')->name('aboutus')->middleware('lscache:max-age=30;public');
+Route::get('/contact','ContactController@contactpage')->name('contact');
+Route::get('/aboutus','AboutusController@aboutuspage')->name('aboutus');
 Auth::routes([
     'verify' => true
 ]);
@@ -112,5 +112,5 @@ Route::middleware(['auth','verified'])->group(function () {
         Route::get('user-cancel-payment/{order}','OrderController@usercancelPaymentStatus')->name('user.cancel.order');
     });
 
-    Route::get('view/order/details/{order}','OrderController@showDetails')->name('order.details')->middleware('lscache:max-age=30;public');
+    Route::get('view/order/details/{order}','OrderController@showDetails')->name('order.details');
 });
